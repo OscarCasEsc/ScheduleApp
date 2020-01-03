@@ -1,0 +1,33 @@
+{
+  "name": "scheduleapp",
+  "version": "0.0.1",
+  "description": "Web application that implements a schedule in which to store contacts and appointments",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OscarCasEsc/ScheduleApp.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "Angular",
+    "express"
+  ],
+  "author": "Óscar Castro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OscarCasEsc/ScheduleApp/issues"
+  },
+  "homepage": "https://github.com/OscarCasEsc/ScheduleApp#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
