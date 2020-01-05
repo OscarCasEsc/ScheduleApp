@@ -3,14 +3,15 @@ const app = express();
 
 const cors = require('cors');
 const morgan = require('morgan');
+const database = require('./database');
 
 
 // Settings
 app.set('port', process.env.PORT || 3000);
 
 //Middlewares
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 app.use(morgan('dev'));
 
 // Routes
