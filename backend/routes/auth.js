@@ -24,9 +24,13 @@ router.post('/register', (req, res) => {
     const newUser = new user(req.body);
     const encryptedPassword = bcryp.hashSync(req.body.password, salt);
     newUser.password = encryptedPassword;
-    newUser.save()
-        .then( res.status(200).end())
-        .catch( res.status(500).end());
+    newUser.save((err, doc) =>{
+        if(err){
+            res.status(200).end();
+        }else{
+            res.status(500).end();
+        }
+    });
 });
 
 module.exports = router;
