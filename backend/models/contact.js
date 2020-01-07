@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const contactSchema = new Schema({
     name: String,
@@ -7,7 +8,8 @@ const contactSchema = new Schema({
     secondSurname: String,
     email: String,
     phone: String,
-    address: String
+    address: String, 
+    createdById: ObjectId
 });
 
 module.exports = mongoose.model('Contact', contactSchema);
