@@ -22,13 +22,13 @@ router.get('/login', async (req, res) => {
 
 router.post('/register', (req, res) => {
     const newUser = new user(req.body);
-    const encryptedPassword = bcryp.hashSync(req.body.password, salt);
+    const encryptedPassword = bcrypt.hashSync(req.body.password, salt);
     newUser.password = encryptedPassword;
     newUser.save((err, doc) =>{
         if(err){
-            res.status(200).end();
-        }else{
             res.status(500).end();
+        }else{
+            res.status(200).end();
         }
     });
 });
