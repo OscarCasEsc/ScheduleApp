@@ -9,9 +9,9 @@ const jwt = require('jsonwebtoken')
 const salt = bcrypt.genSaltSync(10);
 
 router.get('/login', async (req, res) => {
-   const userFind = await user.findOne({email: req.body.email});
+   const userFind = await user.findOne({email: req.query.email});
 
-   if(userFind && bcrypt.compareSync(req.body.password, userFind.password)){
+   if(userFind && bcrypt.compareSync(req.query.password, userFind.password)){
         const token = jwt.sign({_id: userFind._id}, 'mySecretKey', { expiresIn: 60 * 60 });
         res.status(200).json({token: token}).end();
    }else{

@@ -1,0 +1,75 @@
+{
+    "scheduleApp": {
+        "login":"Einloggen",
+        "register": "Registrierung"
+    },
+    "login": {
+        "login":"Einloggen",
+        "email": "E-Mail",
+        "password": "Passwort" 
+    },
+    "register":{
+        "register": "Registrierung",
+        "name": "Vorname",
+        "firstSurname": "Vorname",
+        "secondSurname": "Zweiter Nachname",
+        "email":"E-Mail",
+        "password":"Passwort",
+        "verifyPassword": "Passwort bestätigen"
+    },
+    "home": {
+        "scheduleApp": "ScheduleApp",
+        "myContacts": "Meine Verträge",
+        "myAppointments": "Meine Termine",
+        "closeSession": "Ausloggen"
+    },
+    "contacts":{
+        "myContacts": "Meine Verträge",
+        "phone": "Telefonnummer",
+        "email": "E-Mail",
+        "address": "Adresse",
+        "newContact": "Neuer Kontakt",
+        "editContact": "Kontakt bearbeiten",
+        "edit": "Bearbeiten",
+        "delete": "Entfernen",
+        "name": "Vorname",
+        "firstSurname":"Vorname",
+        "secondSurname":"Zweiter Nachname",
+        "create": "Schaffen"
+    },
+    "appointments": {
+        "myAppointments":"Meine termine",
+        "newAppointment": "Neuer termin",
+        "editAppointment": "Termin bearbeiten",
+        "name": "Vorname",
+        "date": "Datum",
+        "description": "Beschreibung",
+        "edit":"Bearbeiten",
+        "delete":"Löschen",
+        "create": "Schaffen"
+    },
+    "fieldsMsg": {
+        "nameRequired": "Der Name ist erforderlich!",
+        "firstSurnameRequired": "Der Vorname ist erforderlich!",
+        "secondSurnameRequired": "Der vorletzte Nachname ist erforderlich!",
+        "emailRequired": "E-Mail ist erforderlich!",
+        "phoneRequired": "Phone is required!",
+        "addressRequired": "Address is required!",
+        "descriptionRequired":"Description is required!",
+        "dateRequired":"Date is required!"
+    },
+    "deleteModal": {
+        "alert": "Alert",
+        "deleteAppointment": "You will delete an appointment, do you want to continue?",
+        "deleteContact": "You will delete a contact, do you want to continue?",
+        "yes": "Yes",
+        "No": "No"
+    },
+    "languages": {
+        "language": "Language",
+        "es": "Spanish",
+        "en": "English",
+        "de": "German",
+        "fr": "French"
+    }
+}

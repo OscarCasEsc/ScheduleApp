@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+        <h1 class="card-title">{{'register.register' | translate}}</h1>
+          <form #form="ngForm" (submit) = submit()>
+            <div class="form-group">
+              <label for="name">{{'register.name' | translate}}:</label>
+              <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name" #ngName="ngModel" required>
+              <div *ngIf="ngName.invalid && (ngName.dirty || ngName.touched)">
+                <div *ngIf="ngName.errors.required">
+                  <small class="form-text text-danger">{{'fieldsMsg.nameRequired' | translate}}</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="firstSurname">{{'register.firstSurname' | translate}}:</label>
+              <input type="text" class="form-control" name="firstSurname" [(ngModel)]="firstSurname" id="firstSurname" #ngFirstSurname="ngModel" required>
+              <div *ngIf="ngFirstSurname.invalid && (ngFirstSurname.dirty || ngFirstSurname.touched)">
+                <div *ngIf="ngFirstSurname.errors.required">
+                  <small class="form-text text-danger">{{'fieldsMsg.firstSurnameRequired' | translate}}</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="secondSurname">{{'register.secondSurname' | translate}}:</label>
+              <input type="text" class="form-control" name="secondSurname" [(ngModel)]="secondSurname" id="secondSurname" #ngSecondSurname="ngModel" required>
+              <div *ngIf="ngSecondSurname.invalid && (ngSecondSurname.dirty || ngSecondSurname.touched)">
+                <div *ngIf="ngSecondSurname.errors.required">
+                  <small class="form-text text-danger">{{'fieldsMsg.secondSurnameRequired' | translate}}</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">{{'register.email' | translate}}:</label>
+              <input type="email" class="form-control" name="email" [(ngModel)]="email" id="email" #ngEmail="ngModel" required>
+              <div *ngIf="ngEmail.invalid && (ngEmail.dirty || ngEmail.touched)">
+                <div *ngIf="ngEmail.errors.required">
+                  <small class="form-text text-danger">{{'fieldsMsg.emailRequired' | translate}}</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password">{{'register.password' | translate}}:</label>
+              <input type="password" class="form-control" name="password" [(ngModel)]="password" id="password" required>
+            </div>
+            <div class="form-group">
+              <label for="password2">{{'register.verifyPassword' | translate}}:</label>
+              <input type="password" class="form-control" name="password2" [(ngModel)]="password2" id="password2" required>
+            </div>
+            <div class="form-group">
+            <button class="btn btn-primary float-right" type="submit" [disabled]="!form.valid">{{'register.register' | translate}}</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

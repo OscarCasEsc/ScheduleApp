@@ -18,6 +18,7 @@ router.get('/getContacts', verifyToken, (req, res) => {
 // Add Contact
 router.post('/addContact', verifyToken,  (req, res) => {
     const newContact = new contact(req.body);
+    newContact.createdById = req.userId;
     newContact.save((err, doc)=>{
         if(err){
             console.log(err);

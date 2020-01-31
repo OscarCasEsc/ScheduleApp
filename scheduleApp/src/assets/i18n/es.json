@@ -1,0 +1,75 @@
+{
+    "scheduleApp": {
+        "login":"Iniciar sesión",
+        "register": "Registro"
+    },
+    "login": {
+        "login":"Iniciar sesión",
+        "email": "Correo electrónico",
+        "password": "Contraseña" 
+    },
+    "register":{
+        "register": "Registro",
+        "name": "Nombre",
+        "firstSurname": "Primer apellido",
+        "secondSurname": "Segundo apellido",
+        "email":"Correo electrónico",
+        "password":"Contraseña",
+        "verifyPassword": "Verificar contraseña"
+    },
+    "home": {
+        "scheduleApp": "ScheduleApp",
+        "myContacts": "Mis contactos",
+        "myAppointments": "Mis citas",
+        "closeSession": "Cerrar sesión"
+    },
+    "contacts":{
+        "myContacts": "Mis contactos",
+        "phone": "Teléfono",
+        "email": "Correo electrónico",
+        "address": "Dirección",
+        "newContact": "Nuevo contacto",
+        "editContact": "Editar contacto",
+        "edit": "Editar",
+        "delete": "Eliminar",
+        "name": "Nombre",
+        "firstSurname":"Primer apellido",
+        "secondSurname":"Segundo apellido",
+        "create": "Crear"
+    },
+    "appointments": {
+        "myAppointments":"Mis citas",
+        "newAppointment": "Nueva cita",
+        "editAppointment": "Editar cita",
+        "name": "Nombre",
+        "date": "Fecha",
+        "description": "Descripción",
+        "edit":"Editar",
+        "delete":"Eliminar",
+        "create": "Crear"
+    },
+    "fieldsMsg": {
+        "nameRequired": "¡El nombre es requerido!",
+        "firstSurnameRequired": "¡El primer apellido es requrido!",
+        "secondSurnameRequired": "¡El segundo apellido es requerido!",
+        "emailRequired": "¡El email es requerido!",
+        "phoneRequired": "¡El teléfono es requerido!",
+        "addressRequired": "¡La dirección es requerida!",
+        "descriptionRequired":"¡La descripción es requerida!",
+        "dateRequired":"¡La fecha es requerida!"
+    },
+    "deleteModal": {
+        "alert": "Aviso",
+        "deleteAppointment": "Va a eliminar una cita, ¿Desea continuar?",
+        "deleteContact": "Va a eliminar un contacto, ¿Desea continuar?",
+        "yes": "Sí",
+        "No": "No"
+    },
+    "languages": {
+        "language": "Idioma",
+        "es": "Español",
+        "en": "Inglés",
+        "de": "Alemán",
+        "fr": "Frances"
+    }
+}

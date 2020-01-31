@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>{{'appointments.editAppointment' | translate}}</h1>
+    <form #form="ngForm" (ngSubmit)="editAppointment()" class="needs-validation" novalidate>
+      <div class="form-group">
+        <label for="name">{{'appointments.name' | translate}}:</label>
+        <input class="form-control" type="text" name="name" id="name" [(ngModel)]="name" #ngName="ngModel" required>
+        <div *ngIf="ngName.invalid && (ngName.dirty || ngName.touched)">
+          <div *ngIf="ngName.errors.required">
+            <small class="form-text text-danger">{{'fieldsMsg.nameRequired' | translate}}</small>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="date">{{'appointments.date' | translate}}</label>
+        <input  class="form-control" type="date" name="date" id="date" [(ngModel)]="date" #ngDate="ngModel" required>
+        <div *ngIf="ngDate.invalid && (ngDate.dirty || ngDate.touched)">
+          <div *ngIf="ngDate.errors.required">
+            <small class="form-text text-danger">{{'fieldsMsg.dateRequired' | translate}}</small>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description">{{'appointments.description' | translate}}</label>
+        <textarea class="form-control" name="description" id="description" [(ngModel)]="description" #ngDescription="ngModel" required></textarea>
+        <div *ngIf="ngDescription.invalid && (ngDescription.dirty || ngDescription.touched)">
+          <div *ngIf="ngDescription.errors.required">
+            <small class="form-text text-danger">{{'fieldsMsg.descriptionRequired' | translate}}</small>
+          </div>
+        </div>
+      </div>
+  
+    <button type="submit" [disabled]="!form.valid" class="btn btn-primary float-right">{{'appointments.edit' | translate}}</button>
+
+    </form>
+  </div>

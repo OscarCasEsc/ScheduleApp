@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+  <h1>{{'contacts.myContacts' | translate}}</h1>
+  <div class="col-md-12">
+  <button type="button" class="btn btn-primary float-right" routerLink="/newContact"><i class="fa fa-user-plus" aria-hidden="true"></i>
+    {{'contacts.newContact' |translate}}</button>
+  </div>
+    <div class="col-md-12 mt-2" *ngFor="let contact of contacts">
+      <div class="card">
+        <div class="card-body">
+        <h5 class="card-title">{{contact.name}} {{contact.firstSurname}} {{contact.secondSurname}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text"><i class="fa fa-phone" aria-hidden="true"></i> {{'contacts.phone' | translate}}: {{contact.phone}}</p>
+        <p class="card-text"><i class="fa fa-envelope" aria-hidden="true"></i> {{'contacts.email' | translate}}: {{contact.email}}</p>
+        <p class="card-text"><i class="fa fa-address-book" aria-hidden="true"></i> {{'contacts.address' | translate}}: {{contact.address}}</p>
+        <div class="actions float-right">
+          <button type="button" class="btn btn-secondary btn-sm mr-2" (click)="editContact(contact)"><i class="fa fa-pencil" aria-hidden="true"></i> {{'contacts.edit' | translate}}</button>
+          <button type="button" class="btn btn-danger btn-sm" (click)="deleteContact()"><i class="fa fa-trash" aria-hidden="true"></i> {{'contacts.delete' | translate}}</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

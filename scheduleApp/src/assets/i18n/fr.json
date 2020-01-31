@@ -1,0 +1,20 @@
+{
+    "scheduleApp": {
+        "login": "Commencer la session",
+        "register": "Inscription"
+    },
+    "login": {
+        "login":"Commencer la session",
+        "email": "Courrier électronique",
+        "password": "Mot de passe"
+    },
+    "register": {
+        "register":"Inscription",
+        "name": "Nom",
+        "firstSurname": "Prènom",
+        "segundoApellido": "Deuxième nom de famille",
+        "email":"Courrier électronique",
+        "password":"Mot de passe",
+        "verifyPassword": "Vérifier le mot de passe"
+    }
+}

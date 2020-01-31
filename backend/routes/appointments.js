@@ -7,7 +7,7 @@ const {verifyToken} = require('./validationFunctions');
 
 // Get Appoitment
 router.get('/getAppointments', verifyToken, (req, res) => {
-    appointment.find({createrbyId: req.createrbyId},(err, docs) => {
+    appointment.find({createdById: req.userId},(err, docs) => {
         if(err){
             res.status(500).end();
         } else{
@@ -19,6 +19,7 @@ router.get('/getAppointments', verifyToken, (req, res) => {
 // Add Appointment
 router.post('/addAppointment',verifyToken, (req, res) => {
     const newAppointment = new appointment(req.body);
+    newAppointment.createdById = req.userId;
     newAppointment.save((err,doc) => {
         if(err){
             res.status(500).end();
@@ -32,7 +33,7 @@ router.post('/addAppointment',verifyToken, (req, res) => {
 router.post('/editAppointment/:id',verifyToken, (req, res) => {
     const appointmentId = req.params.id;
     
-    appointment.findOneAndUpdate({_id:appointmentId, createrbyId: req.createrbyId}, req.body,(err, doc) => {
+    appointment.findOneAndUpdate({_id:appointmentId, createdById: req.userId}, req.body,(err, doc) => {
         if(err){
             res.status(500).end();
         } else {
@@ -47,7 +48,7 @@ router.post('/editAppointment/:id',verifyToken, (req, res) => {
 
 // Delete Appointment
 router.delete('/deleteAppointment/:id',verifyToken, (req, res) => {
-    appointment.findOneAndRemove({_id:req.params.id, createrbyId: req.createrbyId}, (err,doc) => {
+    appointment.findOneAndRemove({_id:req.params.id, createdById: req.userId}, (err,doc) => {
         if(err){
             res.status(500).end();
         } else {
