@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ContactsService } from 'src/app/services/contacts.service';
+import { ToastService } from 'src/app/services/toast.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-edit-contact',
@@ -20,7 +22,9 @@ export class EditContactComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private contactService: ContactsService
+    private contactService: ContactsService,
+    private toastService: ToastService,
+    private translateService: TranslateService
   ) { }
 
   ngOnInit() {
@@ -50,11 +54,13 @@ export class EditContactComponent implements OnInit {
     };
     this.contactService.editContact(editContact).subscribe(
       res => {
-        console.log('Contact edited!');
+        this.toastService.show(this.translateService.instant('toastMsg.successUpdateContact'),
+        { classname: 'bg-success text-light', delay: 2500 });
         this.router.navigate(['/contacts']);
       },
       err => {
-        console.log('Error while editing!');
+        this.toastService.show(this.translateService.instant('toastMsg.errorUpdateContact'),
+        { classname: 'bg-danger text-light', delay: 2500 });
       }
     );
 

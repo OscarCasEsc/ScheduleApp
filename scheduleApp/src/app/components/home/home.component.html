@@ -5,32 +5,30 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+        <a class="nav-link" routerLink="/contacts" routerLinkActive="is-active">{{'home.myContacts' | translate}}</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" routerLink="/contacts">{{'home.myContacts' | translate}}</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" routerLink="/appointments">{{'home.myAppointments' | translate}}</a>
+        <a class="nav-link" routerLink="/appointments" routerLinkActive="is-active">{{'home.myAppointments' | translate}}</a>
         </li>
       </ul>
     </div>
-
-    <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
-      <ul class="navbar-nav mr-2">
-        <li class="nav-item" ngbDropdown>
-          <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDropdown1" role="button">
-            {{'languages.language' | translate}}
-          </a>
-          <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
-          <a ngbDropdownItem (click)="changeLanguage('en')">{{'languages.en' | translate}}</a>
-          <a ngbDropdownItem (click)="changeLanguage('es')">{{'languages.es' | translate}}</a>
-          <a ngbDropdownItem (click)="changeLanguage('de')">{{'languages.de' | translate}}</a>
-          <a ngbDropdownItem (click)="changeLanguage('fr')">{{'languages.fr' | translate}}</a>
+    <div class="collapse navbar-collapse" id="navbarNav2">
+      <ul class="navbar-nav justify-content-end">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{'languages.language' | translate}}</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" (click)="changeLanguage('en')">{{'languages.en' | translate}}</a>
+            <a class="dropdown-item" (click)="changeLanguage('es')">{{'languages.es' | translate}}</a>
+            <a class="dropdown-item" (click)="changeLanguage('de')">{{'languages.de' | translate}}</a>
+            <a class="dropdown-item" (click)="changeLanguage('fr')">{{'languages.fr' | translate}}</a>
           </div>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" (click)="logOut()">{{'home.closeSession' | translate}}</a>
         </li>
       </ul>
     </div>
   </nav>
+  <app-toast-global aria-live="polite" aria-atomic="true"></app-toast-global>
   <app-root></app-root>

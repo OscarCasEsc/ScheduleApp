@@ -71,5 +71,26 @@
         "en": "English",
         "de": "German",
         "fr": "French"
+    },
+    "notExist": {
+        "appointments": "There are no appointments",
+        "contacts": "There are no contacts"
+    },
+    "toastMsg": {
+        "errorGetContacts": "Error getting contacts",
+        "errorGetAppointments": "Error getting appointments",
+        "successCreateContact": "Success when creating contact",
+        "errorCreateContact": "Error when creating contact",
+        "successDeleteContact": "Success when deleting contact",
+        "errorDeleteContact": "Error when deleting contact",
+        "successUpdateContact": "Success when updating contact",
+        "errorUpdateContact": "Error when updating contact",
+        "successCreateAppoitment": "Success when creating appointment",
+        "errorCreateAppointment": "Error when creating appointment",
+        "successDeleteAppointment": "Success when deleting appointment",
+        "errorDeleteAppointment": "Error when deleting appointment",
+        "successUpdateAppointment": "Success when updating appointment",
+        "errorUpdateAppointment": "Error when updating appointment"
+
     }
 }

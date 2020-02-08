@@ -21,6 +21,7 @@ import { DatePipe } from '@angular/common';
 import { DeleteConfirmationComponent } from './components/delete-confirmation/delete-confirmation.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ToastGlobalComponent } from './components/toast-global/toast-global.component';
 
 export function HttpLoaderFactory(http: HttpClient ) {
   return new TranslateHttpLoader(http);
@@ -38,7 +39,8 @@ export function HttpLoaderFactory(http: HttpClient ) {
     ScheduleAppComponent,
     EditContactComponent,
     EditAppointmentComponent,
-    DeleteConfirmationComponent
+    DeleteConfirmationComponent,
+    ToastGlobalComponent
   ],
   imports: [
     BrowserModule,

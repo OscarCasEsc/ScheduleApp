@@ -1,16 +1,33 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 leftSide">
-      aaa
+<header>
+  <div class="container">
+    <div class="row">
+      <h1>ScheduleApp</h1>
     </div>
-    <div class="col-md-6 rightSide">
+  </div>
+</header>
+<div class="container mb-2">
+  <div class="row">
+    <div class="col-lg-6 col-md-12 col-sm-12 col-12 mb-4 left">
+        <h2><i class="fa fa-users" aria-hidden="true"></i>
+          Gestiona tus contactos</h2>
+        <h2><i class="fa fa-calendar" aria-hidden="true"></i>
+          Almacena tus citas</h2>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-12 right">
+      <h2>Un sitio donde almacenar tus citas y contactos</h2>
+      <p>Únete a ScheduleApp hoy mismo!</p>
       <div class="">
-
-      </div>
-      <div class="">
-      <button (click)="goToLogin()" type="button" class="btn btn-primary">{{'scheduleApp.login' | translate}}</button>
-      <button (click)="goToRegister()" type="button" class="btn btn-primary">{{'scheduleApp.register' | translate}}</button>
+        <button (click)="goToLogin()" type="button"
+          class="btn btn-primary btnLogin">
+          {{'scheduleApp.login' | translate}}</button>
+        <button (click)="goToRegister()" type="button"
+          class="btn btn-primary btnRegister">{{'scheduleApp.register' | translate}}</button>
       </div>
     </div>
   </div>
 </div>
+<footer>
+  <div class="container">
+    <p class="text-center">Copyright 2020 - Develop by Oscar</p>
+  </div>
+</footer>

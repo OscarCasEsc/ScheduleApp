@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { AppointmentsService } from 'src/app/services/appointments.service';
+import { ToastService } from 'src/app/services/toast.service';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-edit-appointment',
   templateUrl: './edit-appointment.component.html',
@@ -18,7 +20,9 @@ export class EditAppointmentComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private datePipe: DatePipe,
-    private appointmentService: AppointmentsService
+    private appointmentService: AppointmentsService,
+    private toastService: ToastService,
+    private translateService: TranslateService
   ) { }
 
   ngOnInit() {
@@ -43,11 +47,13 @@ export class EditAppointmentComponent implements OnInit {
     };
     this.appointmentService.editAppointments(editAppointment).subscribe(
       res => {
-        console.log('Appointment edited!');
+        this.toastService.show(this.translateService.instant('toastMsg.successUpdateAppointment'),
+        { classname: 'bg-success text-light', delay: 2500 });
         this.router.navigate(['/appointments']);
       },
       err => {
-        console.log('Error while editing!');
+        this.toastService.show(this.translateService.instant('toastMsg.errorUpdateAppointment'),
+        { classname: 'bg-danger text-light', delay: 2500 });
       }
     );
 

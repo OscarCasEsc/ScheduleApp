@@ -1,60 +1,75 @@
 <div class="container">
-  <h1>{{'contacts.newContact' | translate}}</h1>
-  <form #form="ngForm" (ngSubmit)="createContact()">
-    <div class="form-group">
-      <label for="name">{{'contacts.name' | translate}}</label>
-      <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name" #ngName="ngModel" required>
-      <div *ngIf="ngName.invalid && (ngName.dirty || ngName.touched)">
-        <div *ngIf="ngName.errors.required">
-          <small class="form-text text-danger">{{'fieldsMsg.nameRequired' | translate}}</small>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h1>{{'contacts.newContact' | translate}}</h1>
+          <form #form="ngForm" (ngSubmit)="createContact()">
+            <div class="form-group">
+              <label for="name">{{'contacts.name' | translate}}</label>
+              <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name" #ngName="ngModel"
+                required>
+              <div *ngIf="ngName.invalid && (ngName.dirty || ngName.touched)">
+                <div *ngIf="ngName.errors.required">
+                  <small class="form-text text-danger">{{'fieldsMsg.nameRequired' | translate}}</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="firstSurname">{{'contacts.firstSurname' | translate}}</label>
+              <input type="text" class="form-control" name="firstSurname" id="firstSurname" [(ngModel)]="firstSurname"
+                #ngFirstSurname="ngModel" required>
+              <div *ngIf="ngFirstSurname.invalid && (ngFirstSurname.dirty || ngFirstSurname.touched)">
+                <div *ngIf="ngFirstSurname.errors.required">
+                  <small class="form-text text-danger">{{'fieldsMsg.firstSurnameRequired' | translate}}</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="secondSurname">{{'contacts.secondSurname' | translate}}</label>
+              <input type="text" class="form-control" name="secondSurname" id="secondSurname"
+                [(ngModel)]="secondSurname" #ngSecondSurname="ngModel" required>
+              <div *ngIf="ngSecondSurname.invalid && (ngSecondSurname.dirty || ngSecondSurname.touched)">
+                <div *ngIf="ngSecondSurname.errors.required">
+                  <small class="form-text text-danger">{{'fieldsMsg.secondSurnameRequired' | translate}}</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone">{{'contacts.phone' | translate}}</label>
+              <input type="text" class="form-control" name="phone" id="phone" [(ngModel)]="phone" #ngPhone="ngModel"
+                required>
+              <div *ngIf="ngPhone.invalid && (ngPhone.dirty || ngPhone.touched)">
+                <div *ngIf="ngPhone.errors.required">
+                  <small class="form-text text-danger">{{'fieldsMsg.phoneRequired' | translate}}</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">{{'contacts.email' | translate}}</label>
+              <input type="email" class="form-control" name="email" id="email" [(ngModel)]="email" #ngEmail="ngModel"
+                required>
+              <div *ngIf="ngEmail.invalid && (ngEmail.dirty || ngEmail.touched)">
+                <div *ngIf="ngEmail.errors.required">
+                  <small class="form-text text-danger">{{'fieldsMsg.emailRequired' | translate}}</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="address">{{'contacts.address' | translate}}</label>
+              <input type="text" class="form-control" name="address" id="address" [(ngModel)]="address"
+                #ngAddress="ngModel" required>
+              <div *ngIf="ngAddress.invalid && (ngAddress.dirty || ngAddress.touched)">
+                <div *ngIf="ngAddress.errors.required">
+                  <small class="form-text text-danger">{{'fieldsMsg.addressRequired' | translate}}</small>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary float-right"
+              [disabled]="!form.valid">{{'contacts.create' | translate}}</button>
+          </form>
         </div>
       </div>
     </div>
-    <div class="form-group">
-      <label for="firstSurname">{{'contacts.firstSurname' | translate}}</label>
-      <input type="text" class="form-control" name="firstSurname" id="firstSurname" [(ngModel)]="firstSurname" #ngFirstSurname="ngModel" required>
-      <div *ngIf="ngFirstSurname.invalid && (ngFirstSurname.dirty || ngFirstSurname.touched)">
-        <div *ngIf="ngFirstSurname.errors.required">
-          <small class="form-text text-danger">{{'fieldsMsg.firstSurnameRequired' | translate}}</small>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="secondSurname">{{'contacts.secondSurname' | translate}}</label>
-      <input type="text" class="form-control" name="secondSurname" id="secondSurname" [(ngModel)]="secondSurname" #ngSecondSurname="ngModel" required>
-      <div *ngIf="ngSecondSurname.invalid && (ngSecondSurname.dirty || ngSecondSurname.touched)">
-        <div *ngIf="ngSecondSurname.errors.required">
-          <small class="form-text text-danger">{{'fieldsMsg.secondSurnameRequired' | translate}}</small>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="phone">{{'contacts.phone' | translate}}</label>
-      <input type="text" class="form-control" name="phone" id="phone" [(ngModel)]="phone" #ngPhone="ngModel" required>
-      <div *ngIf="ngPhone.invalid && (ngPhone.dirty || ngPhone.touched)">
-        <div *ngIf="ngPhone.errors.required">
-          <small class="form-text text-danger">{{'fieldsMsg.phoneRequired' | translate}}</small>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="email">{{'contacts.email' | translate}}</label>
-      <input type="email" class="form-control" name="email" id="email" [(ngModel)]="email" #ngEmail="ngModel" required>
-      <div *ngIf="ngEmail.invalid && (ngEmail.dirty || ngEmail.touched)">
-        <div *ngIf="ngEmail.errors.required">
-          <small class="form-text text-danger">{{'fieldsMsg.emailRequired' | translate}}</small>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="address">{{'contacts.address' | translate}}</label>
-      <input type="text" class="form-control" name="address" id="address" [(ngModel)]="address" #ngAddress="ngModel" required>
-      <div *ngIf="ngAddress.invalid && (ngAddress.dirty || ngAddress.touched)">
-        <div *ngIf="ngAddress.errors.required">
-          <small class="form-text text-danger">{{'fieldsMsg.addressRequired' | translate}}</small>
-        </div>
-      </div>
-    </div>
-  <button type="submit" class="btn btn-primary float-right" [disabled]="!form.valid">{{'contacts.create' | translate}}</button>
-  </form>
+  </div>
 </div>

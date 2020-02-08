@@ -5,6 +5,9 @@
   <button type="button" class="btn btn-primary float-right" routerLink="/newAppointment"><i class="fa fa-book" aria-hidden="true"></i>
     {{'appointments.newAppointment' |translate}}</button>
   </div>
+    <div class="col-md-12 mt-2" *ngIf="!appointments || appointments.length === 0">
+    <p>{{'notExist.appointments' | translate}}</p>
+    </div>
     <div class="col-md-12 mt-2" *ngFor="let appointment of appointments">
       <div class="card">
         <div class="card-body">
@@ -13,7 +16,7 @@
         <p>{{appointment.description}}</p>
         <div class="actions float-right">
           <button type="button" class="btn btn-secondary btn-sm mr-2" (click)="editAppointment(appointment)"><i class="fa fa-pencil" aria-hidden="true"></i> {{'contacts.edit' | translate}}</button>
-          <button type="button" class="btn btn-danger btn-sm" (click)="deleteAppointment()"><i class="fa fa-trash" aria-hidden="true"></i> {{'contacts.delete' | translate}}</button>
+          <button type="button" class="btn btn-danger btn-sm" (click)="deleteAppointment(appointment)"><i class="fa fa-trash" aria-hidden="true"></i> {{'contacts.delete' | translate}}</button>
         </div>
         </div>
       </div>

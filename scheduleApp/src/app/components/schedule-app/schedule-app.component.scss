@@ -1,0 +1,52 @@
+footer {
+    background-color: #f4623a;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+header {
+    background-color: #f4623a;
+    color: #fff;
+}
+.left {
+    color: white;
+    width: 50%;
+    height: auto;
+    i {
+        color: #f4623a;
+    }
+}
+.right {
+    color: white;
+    width: 50%;
+    height: auto;
+}
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.btnLogin {
+    display: block;
+    margin: 2em auto;
+    color: white;
+    background-color: #f4623a;
+    border: 3px solid #f4623a;
+    border-radius: 25px;
+    width: 50%;
+}
+.btnLogin:hover {
+    border: 3px solid white;
+}
+.btnRegister {
+    display: block;
+    margin: 2em auto;
+    color: white;
+    background-color: #f4623a;
+    border: 3px solid #f4623a;
+    border-radius: 25px;
+    width: 50%;
+}
+.btnRegister:hover {
+    border: 3px solid white;
+}

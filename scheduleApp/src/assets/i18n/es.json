@@ -71,5 +71,27 @@
         "en": "Inglés",
         "de": "Alemán",
         "fr": "Frances"
+    },
+    "notExist": {
+        "appointments": "No existen citas",
+        "contacts": "No existen contactos"
+    },
+    "toastMsg": {
+        "errorGetContacts": "Error al obtener contactos",
+        "errorGetAppointments": "Error al obtener citas",
+
+        "successCreateContact": "Éxito al crear contacto",
+        "errorCreateContact": "Error al crear contacto",
+        "successDeleteContact": "Éxito al eliminar contacto",
+        "errorDeleteContact": "Error al eliminar contacto",
+        "successUpdateContact": "Éxito al editar contacto",
+        "errorUpdateContact": "Error al editar contacto",
+
+        "successCreateAppoitment": "Éxito al crear cita",
+        "errorCreateAppointment": "Error al crear cita",
+        "successDeleteAppointment": "Éxito al eliminar cita",
+        "errorDeleteAppointment": "Error al eliminar cita",
+        "successUpdateAppointment": "Éxito al editar cita",
+        "errorUpdateAppointment": "Error al editar cita"
     }
 }

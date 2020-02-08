@@ -11,7 +11,8 @@ export class HomeComponent implements OnInit {
 
   collapsed = true;
   constructor(
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -19,6 +20,11 @@ export class HomeComponent implements OnInit {
 
   changeLanguage(lang) {
     this.translateService.use(lang);
+  }
+
+  logOut() {
+    localStorage.clear();
+    this.router.navigate(['']);
   }
 
 }

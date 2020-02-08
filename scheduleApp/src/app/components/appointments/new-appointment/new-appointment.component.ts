@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppointmentsService } from 'src/app/services/appointments.service';
 import { Router } from '@angular/router';
+import { ToastService } from 'src/app/services/toast.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-new-appointment',
@@ -15,7 +17,9 @@ export class NewAppointmentComponent implements OnInit {
 
   constructor(
     private appointmentService: AppointmentsService,
-    private router: Router
+    private router: Router,
+    private toastService: ToastService,
+    private translateService: TranslateService
   ) { }
 
   ngOnInit() {
@@ -30,12 +34,14 @@ export class NewAppointmentComponent implements OnInit {
     };
     this.appointmentService.createAppointment(appointment).subscribe(
       res => {
-        console.log('Appointment Created');
+        this.toastService.show(this.translateService.instant('toastMsg.successCreateAppoitment'),
+        { classname: 'bg-success text-light', delay: 2500 });
         this.router.navigate(['/appointments']);
 
       },
       err => {
-        console.log('Error al crear');
+        this.toastService.show(this.translateService.instant('toastMsg.errorCreateAppointment'),
+        { classname: 'bg-danger text-light', delay: 2500 });
       }
     );
   }

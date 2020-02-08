@@ -21,7 +21,7 @@ export class AppointmentsService {
   }
 
   deleteAppointment(id) {
-    return this.http.delete<any>(this.URL + 'deleteAppointment');
+    return this.http.delete<any>(this.URL + 'deleteAppointment' + `/${id}`);
   }
   editAppointments(appointment) {
     return this.http.post<any>(this.URL + `editAppointment/${appointment._id}`, appointment);

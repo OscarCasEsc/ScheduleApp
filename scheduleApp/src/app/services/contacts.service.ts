@@ -23,4 +23,8 @@ export class ContactsService {
   editContact(contact) {
     return this.http.post<any>(this.URL + `editContact/${contact._id}`, contact);
   }
+
+  deleteContact(contact) {
+    return this.http.delete<any>(this.URL + `deleteContact/${contact._id}`);
+  }
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactsService } from 'src/app/services/contacts.service';
 import { Router } from '@angular/router';
+import { ToastService } from 'src/app/services/toast.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-new-contact',
@@ -18,7 +20,9 @@ export class NewContactComponent implements OnInit {
 
   constructor(
     private contactsService: ContactsService,
-    private router: Router
+    private router: Router,
+    private toastService: ToastService,
+    private translateService: TranslateService
   ) { }
 
   ngOnInit() {
@@ -36,11 +40,14 @@ export class NewContactComponent implements OnInit {
     this.contactsService.createContact(contact).subscribe(
       res => {
         console.log('Contact created!');
+        this.toastService.show(this.translateService.instant('toastMsg.successCreateContact'),
+        { classname: 'bg-success text-light', delay: 2500 });
         this.router.navigate(['/contacts']);
 
       },
       err => {
-        console.log('Error');
+        this.toastService.show(this.translateService.instant('toastMsg.errorCreateContact'),
+        { classname: 'bg-danger text-light', delay: 2500 });
       }
     );
   }

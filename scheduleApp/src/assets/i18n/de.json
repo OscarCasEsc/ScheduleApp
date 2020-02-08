@@ -71,5 +71,19 @@
         "en": "English",
         "de": "German",
         "fr": "French"
+    },
+    "notExist": {
+        "appointments": "Es gibt keine Termine",
+        "contacts": "Es gibt keine Kontakte"
+    },
+    "toastMsg": {
+        "successCreateContact": "Erfolg bei der Kontaktaufnahme",
+        "errorCreateContact": "Fehler beim Erstellen des Kontakts",
+        "successDeleteContact": "Erfolg beim Löschen des Kontakts",
+        "errorDeleteContact": "Fehler beim Löschen des Kontakts",
+        "successCreateAppoitment": "Erfolg beim Anlegen eines Termins",
+        "errorCreateAppointment": "Fehler beim Anlegen des Termins",
+        "successDeleteAppointment": "Erfolg beim Löschen des Termins",
+        "errorDeleteAppointment": "Fehler beim Löschen des Termins"
     }
 }
