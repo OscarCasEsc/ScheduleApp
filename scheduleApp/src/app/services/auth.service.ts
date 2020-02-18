@@ -20,4 +20,11 @@ export class AuthService {
   register(user) {
     return this.http.post<any>(this.URL + '/register', user);
   }
+
+  isLogged() {
+    if (localStorage.getItem('token')) {
+      return true;
+    }
+    return false;
+  }
 }

@@ -10,6 +10,7 @@ import { ScheduleAppComponent } from './components/schedule-app/schedule-app.com
 import { NewAppointmentComponent } from './components/appointments/new-appointment/new-appointment.component';
 import { EditContactComponent } from './components/contacts/edit-contact/edit-contact.component';
 import { EditAppointmentComponent } from './components/appointments/edit-appointment/edit-appointment.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', component: ScheduleAppComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: '',
     component: HomeComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: 'contacts', component: ContactsComponent},
       { path: 'newContact', component: NewContactComponent},

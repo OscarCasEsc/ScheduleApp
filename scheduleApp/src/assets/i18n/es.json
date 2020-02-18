@@ -6,7 +6,11 @@
     "login": {
         "login":"Iniciar sesión",
         "email": "Correo electrónico",
-        "password": "Contraseña" 
+        "password": "Contraseña",
+        "wrongEmailOrPassword": "¡Usuario o contraseña incorrectos!",
+        "requiredPassword": "¡La contraseña es requerida!",
+        "requiredEmail": "¡El email es requerido!",
+        "wrongEmail":"¡Introduzca un email válido!"
     },
     "register":{
         "register": "Registro",

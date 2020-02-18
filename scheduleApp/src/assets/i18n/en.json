@@ -1,12 +1,21 @@
 {
     "scheduleApp": {
+        "scheduleApp":"ScheduleApp",
         "login":"Log In",
-        "register": "Register"
+        "register": "Register",
+        "aPlace": "A place to store your appointments and contacts",
+        "joinUp": "Join ScheduleApp today!",
+        "manageContacts": "Manage your contacts",
+        "storeAppointments": "Store your appointments"
     },
     "login": {
         "login":"Log In",
         "email": "Email",
-        "password": "Password" 
+        "password": "Password",
+        "wrongEmailOrPassword": "Incorrect user or password!",
+        "requiredPassword": "Password is required!",
+        "requiredEmail": "Email is required!",
+        "wrongEmail": "Enter a valid email!"
     },
     "register":{
         "register": "Register",

@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  showSpinner: boolean;
+  wrongUserPassword: boolean;
   email: string;
   password: string;
 
@@ -17,10 +19,12 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.wrongUserPassword = false;
+    this.showSpinner = false;
   }
 
   logIn() {
-
+    this.showSpinner = true;
     this.authService.login(this.email, this.password).subscribe(
       res => {
         localStorage.setItem('token', res.token);
@@ -28,6 +32,8 @@ export class LoginComponent implements OnInit {
       },
       error => {
         console.log(error);
+        this.showSpinner = false;
+        this.wrongUserPassword = true;
       }
     );
   }

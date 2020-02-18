@@ -7,13 +7,32 @@
           <form #form="ngForm" (submit)="logIn()">
             <div class="form-group">
               <label for="email">{{'login.email' | translate}}:</label>
-              <input type="email" class="form-control" name="email" id="email" [(ngModel)]="email" required>
+              <input type="text" class="form-control" name="email" id="email" [(ngModel)]="email" #correo="ngModel"
+                required email>
+              <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" class="errorMessage">
+
+                <div *ngIf="correo.errors.required">
+                  {{'login.requiredEmail' | translate}}
+                </div>
+                <div *ngIf="correo.invalid && correo.value!==''">
+                  {{'login.wrongEmail' | translate}}
+                </div>
+              </div>
             </div>
             <div class="form-group">
             <label for="password">{{'login.password' | translate}}</label>
-              <input type="password" class="form-control" name="password" id="password" [(ngModel)]="password" required>
+              <input type="password" class="form-control" name="password" id="password" [(ngModel)]="password" #pass="ngModel" required>
+              <div class="errorMessage" *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+                <div *ngIf="pass.errors.required">
+                  {{'login.requiredPassword' | translate}}
+                </div>
+              </div>
             </div>
-            <div class="form-group">
+            <div *ngIf="showSpinner" class="spinner-grow text-muted float-right"></div>
+            <div *ngIf="!showSpinner" class="form-group">
+            <div class="errorMessage" *ngIf="wrongUserPassword">
+              {{'login.wrongEmailOrPassword' | translate}}
+            </div>
             <button type="submit" class="btn btn-primary float-right" [disabled]="!form.valid">{{'login.login' | translate}}</button>
             </div>
           </form>
