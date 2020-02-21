@@ -104,6 +104,8 @@
         "errorDeleteAppointment": "Error when deleting appointment",
         "successUpdateAppointment": "Success when updating appointment",
         "errorUpdateAppointment": "Error when updating appointment"
-
+    },
+    "footer": {
+        "text": "Copyright 2020 - Develop by Oscar"
     }
 }

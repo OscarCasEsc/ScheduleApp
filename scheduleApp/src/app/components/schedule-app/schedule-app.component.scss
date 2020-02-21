@@ -1,3 +1,7 @@
+.page-container{
+    position: relative;
+    min-height: 100vh;
+}
 footer {
     background-color: #f4623a;
     color: #fff;
@@ -49,4 +53,12 @@ header {
 }
 .btnRegister:hover {
     border: 3px solid white;
+}
+.languages img {
+    margin: 5px;
+}
+.selected {
+    border-radius: 15px;
+    border-color: #fff;
+    border-style: solid;
 }

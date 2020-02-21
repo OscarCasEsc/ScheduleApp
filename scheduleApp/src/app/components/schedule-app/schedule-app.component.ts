@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-schedule-app',
@@ -9,10 +10,16 @@ import { Router } from '@angular/router';
 export class ScheduleAppComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+    public translateService: TranslateService
   ) { }
 
   ngOnInit() {
+  }
+
+  changeLanguage(lang: string) {
+    localStorage.setItem('lang', lang);
+    this.translateService.use(lang);
   }
 
   goToLogin() {

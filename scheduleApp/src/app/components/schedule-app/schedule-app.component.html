@@ -1,33 +1,41 @@
 <header>
   <div class="container">
     <div class="row">
-    <h1>{{'scheduleApp.scheduleApp' | translate}}</h1>
-    </div>
-  </div>
-</header>
-<div class="container mb-2">
-  <div class="row">
-    <div class="col-lg-6 col-md-12 col-sm-12 col-12 mb-4 left">
-        <h2><i class="fa fa-users" aria-hidden="true"></i>
-        {{'scheduleApp.manageContacts' | translate}}</h2>
-        <h2><i class="fa fa-calendar" aria-hidden="true"></i>
-        {{'scheduleApp.storeAppointments' | translate}}</h2>
-    </div>
-    <div class="col-lg-6 col-md-12 col-sm-12 col-12 right">
-    <h2>{{'scheduleApp.aPlace' | translate}}</h2>
-      <p>{{'scheduleApp.joinUp' | translate}}</p>
-      <div class="">
-        <button (click)="goToLogin()" type="button"
-          class="btn btn-primary btnLogin">
-          {{'scheduleApp.login' | translate}}</button>
-        <button (click)="goToRegister()" type="button"
-          class="btn btn-primary btnRegister">{{'scheduleApp.register' | translate}}</button>
+      <h1>{{'scheduleApp.scheduleApp' | translate}}</h1>
+      <div class="languages ml-auto">
+        <img [ngClass]="{'selected': translateService.currentLang=='en'}" (click)="changeLanguage('en')" src="../../../assets/img/en.png">
+        <img [ngClass]="{'selected': translateService.currentLang==='es'}" (click)="changeLanguage('es')" src="../../../assets/img/es.png">
+        <img [ngClass]="{'selected': translateService.currentLang==='de'}" (click)="changeLanguage('de')" src="../../../assets/img/de.png">
+        <img [ngClass]="{'selected': translateService.currentLang==='fr'}" (click)="changeLanguage('fr')" src="../../../assets/img/fr.png">
       </div>
     </div>
   </div>
-</div>
-<footer>
+</header>
+<div class="page-container">
   <div class="container">
-    <p class="text-center">Copyright 2020 - Develop by Oscar</p>
+    <div class="row">
+      <div class="col-lg-6 col-md-12 col-sm-12 col-12 mb-4 left">
+          <h2><i class="fa fa-users" aria-hidden="true"></i>
+          {{'scheduleApp.manageContacts' | translate}}</h2>
+          <h2><i class="fa fa-calendar" aria-hidden="true"></i>
+          {{'scheduleApp.storeAppointments' | translate}}</h2>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12 col-12 right">
+      <h2>{{'scheduleApp.aPlace' | translate}}</h2>
+        <p>{{'scheduleApp.joinUp' | translate}}</p>
+        <div class="">
+          <button (click)="goToLogin()" type="button"
+            class="btn btn-primary btnLogin">
+            {{'scheduleApp.login' | translate}}</button>
+          <button (click)="goToRegister()" type="button"
+            class="btn btn-primary btnRegister">{{'scheduleApp.register' | translate}}</button>
+        </div>
+      </div>
+    </div>
   </div>
-</footer>
+  <footer>
+    <div class="container">
+    <p class="text-center">{{'footer.text' | translate}}</p>
+    </div>
+  </footer>
+</div>

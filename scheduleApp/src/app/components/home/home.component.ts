@@ -16,6 +16,9 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (localStorage.getItem('lang')) {
+      this.changeLanguage(localStorage.getItem('lang'));
+    }
   }
 
   changeLanguage(lang) {

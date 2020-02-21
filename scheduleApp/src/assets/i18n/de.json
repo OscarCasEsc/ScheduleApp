@@ -1,12 +1,21 @@
 {
     "scheduleApp": {
+        "scheduleApp": "ScheduleApp",
         "login":"Einloggen",
-        "register": "Registrierung"
+        "register": "Registrierung",
+        "aPlace": "Ein Ort zum Speichern Ihrer Termine und Kontakte",
+        "joinUp":"Treten Sie ScheduleApp bei!",
+        "manageContacts": "Verwalten Sie Ihre Kontakte",
+        "storeAppointments": "Speichern Sie Ihre Termine"
     },
     "login": {
         "login":"Einloggen",
         "email": "E-Mail",
-        "password": "Passwort" 
+        "password": "Passwort",
+        "wrongEmailOrPassword": "Falscher Benutzername oder Passwort!",
+        "requiredPassword": "Das Passwort ist erforderlich!",
+        "requiredEmail": "E-Mail ist erforderlich!",
+        "wrongEmail": "Geben Sie eine gültige E-Mail ein!"
     },
     "register":{
         "register": "Registrierung",
@@ -53,10 +62,14 @@
         "firstSurnameRequired": "Der Vorname ist erforderlich!",
         "secondSurnameRequired": "Der vorletzte Nachname ist erforderlich!",
         "emailRequired": "E-Mail ist erforderlich!",
-        "phoneRequired": "Phone is required!",
-        "addressRequired": "Address is required!",
-        "descriptionRequired":"Description is required!",
-        "dateRequired":"Date is required!"
+        "phoneRequired": "Das Telefon ist erforderlich!",
+        "addressRequired": "Die Adresse ist erforderlich!",
+        "descriptionRequired":"Die Beschreibung ist erforderlich!",
+        "dateRequired":"Das Datum ist erforderlich!",
+        "emailWrong": "Geben Sie eine gültige E-Mail ein!",
+        "passwordRequired": "Das Passwort ist erforderlich!",
+        "rePasswordRequired": "Geben Sie das Passwort erneut ein!",
+        "rePasswordWrong": "Passwörter müssen übereinstimmen!"
     },
     "deleteModal": {
         "alert": "Alert",
@@ -77,13 +90,22 @@
         "contacts": "Es gibt keine Kontakte"
     },
     "toastMsg": {
+        "errorGetContacts": "Fehler beim Abrufen der Kontakte",
+        "errorGetAppointments": "Fehler beim Abrufen von Terminen",
         "successCreateContact": "Erfolg bei der Kontaktaufnahme",
         "errorCreateContact": "Fehler beim Erstellen des Kontakts",
         "successDeleteContact": "Erfolg beim Löschen des Kontakts",
         "errorDeleteContact": "Fehler beim Löschen des Kontakts",
+        "successUpdateContact": "Erfolg beim Bearbeiten des Kontakts",
+        "errorUpdateContact": "Fehler beim Bearbeiten des Kontakts",
         "successCreateAppoitment": "Erfolg beim Anlegen eines Termins",
         "errorCreateAppointment": "Fehler beim Anlegen des Termins",
         "successDeleteAppointment": "Erfolg beim Löschen des Termins",
-        "errorDeleteAppointment": "Fehler beim Löschen des Termins"
+        "errorDeleteAppointment": "Fehler beim Löschen des Termins",
+        "successUpdateAppointment": "Erfolg beim Bearbeiten des Termins",
+        "errorUpdateAppointment": "Fehler beim Bearbeiten des Termins"
+    },
+    "footer": {
+        "text": "Copyright 2020 - Entwickelt von Oscar"
     }
 }

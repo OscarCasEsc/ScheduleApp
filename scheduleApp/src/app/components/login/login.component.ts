@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private translateService: TranslateService
   ) { }
 
   ngOnInit() {
@@ -29,6 +31,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.email, this.password).subscribe(
       res => {
         localStorage.setItem('token', res.token);
+        console.log('login ' + this.translateService.currentLang);
         this.router.navigate(['/contacts']);
       },
       error => {
