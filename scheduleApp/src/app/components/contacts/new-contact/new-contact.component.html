@@ -48,10 +48,13 @@
             <div class="form-group">
               <label for="email">{{'contacts.email' | translate}}</label>
               <input type="email" class="form-control" name="email" id="email" [(ngModel)]="email" #ngEmail="ngModel"
-                required>
+                required email>
               <div *ngIf="ngEmail.invalid && (ngEmail.dirty || ngEmail.touched)">
                 <div *ngIf="ngEmail.errors.required">
                   <small class="form-text text-danger">{{'fieldsMsg.emailRequired' | translate}}</small>
+                </div>
+                <div *ngIf="ngEmail.invalid && ngEmail.value!==''">
+                  <small class="form-text text-danger">{{'fieldsMsg.emailWrong' | translate}}</small>
                 </div>
               </div>
             </div>

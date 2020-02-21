@@ -65,7 +65,11 @@
         "phoneRequired": "Phone is required!",
         "addressRequired": "Address is required!",
         "descriptionRequired":"Description is required!",
-        "dateRequired":"Date is required!"
+        "dateRequired":"Date is required!",
+        "emailWrong":"Enter a valid email!",
+        "passwordRequired": "Password is required!",
+        "rePasswordRequired": "Re-enter password!",
+        "rePasswordWrong": "Passwords must match!"
     },
     "deleteModal": {
         "alert": "Alert",

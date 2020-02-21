@@ -15,6 +15,14 @@ body {
     background-color: #f4623ae0;
     border-color: #f4623ae0;
 }
+.btn-primary:active {
+    background-color: #f4623ae0 !important;
+    border-color: #f4623ae0 !important;
+}
+.btn-primary:focus {
+    background-color: #f4623ae0 !important;
+    border-color: #f4623ae0 !important;
+}
 
 .form-control:focus {
     border-color: orange;

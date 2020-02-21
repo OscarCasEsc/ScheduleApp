@@ -22,6 +22,7 @@ import { DeleteConfirmationComponent } from './components/delete-confirmation/de
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ToastGlobalComponent } from './components/toast-global/toast-global.component';
+import { MustMatchDirective } from './shared/must-match.directive';
 
 export function HttpLoaderFactory(http: HttpClient ) {
   return new TranslateHttpLoader(http);
@@ -40,7 +41,8 @@ export function HttpLoaderFactory(http: HttpClient ) {
     EditContactComponent,
     EditAppointmentComponent,
     DeleteConfirmationComponent,
-    ToastGlobalComponent
+    ToastGlobalComponent,
+    MustMatchDirective
   ],
   imports: [
     BrowserModule,

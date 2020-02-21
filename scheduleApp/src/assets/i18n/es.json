@@ -60,7 +60,11 @@
         "phoneRequired": "¡El teléfono es requerido!",
         "addressRequired": "¡La dirección es requerida!",
         "descriptionRequired":"¡La descripción es requerida!",
-        "dateRequired":"¡La fecha es requerida!"
+        "dateRequired":"¡La fecha es requerida!",
+        "emailWrong": "¡Introduzca un email válido!",
+        "passwordRequired": "¡La contraseña es requerida!",
+        "rePasswordRequired": "¡Vuelva a introducir la contraseña!",
+        "rePasswordWrong": "¡Las contraseñas deben coincidir!"
     },
     "deleteModal": {
         "alert": "Aviso",

@@ -26,6 +26,7 @@ export class NewContactComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.email = '';
   }
 
   createContact() {

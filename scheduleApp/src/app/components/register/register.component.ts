@@ -11,7 +11,7 @@ export class RegisterComponent implements OnInit {
   name: string;
   firstSurname: String;
   secondSurname: String;
-  email: String;
+  email: string;
   password: String;
   password2: String;
 
@@ -21,6 +21,7 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.email = '';
   }
 
   submit() {

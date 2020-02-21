@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.wrongUserPassword = false;
     this.showSpinner = false;
+    this.email = '';
   }
 
   logIn() {
