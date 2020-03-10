@@ -5,12 +5,29 @@ const contact = require('../models/contact');
 const {verifyToken} = require('./validationFunctions');
 
 //Get Contacts
-router.get('/getContacts', verifyToken, (req, res) => {
-    contact.find({createdById: req.userId},(err, docs) => {
-        if(err){
+router.get('/getContacts/:page/:limit', verifyToken, (req, res) => {
+    const page = +req.params.page;
+    const limit = +req.params.limit;
+
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+
+    const results = {};
+
+    contact.countDocuments({createdById: req.userId}, (err, count) => {
+        if(err) {
             res.status(500).end();
         } else {
-            res.status(200).json(docs).end();
+            results.total = count;
+            contact.find({createdById: req.userId},(err, docs) => {
+                if(err){
+                    res.status(500).end();
+                } else {
+                    results.paginatedResults = docs;
+                    res.status(200).json(results).end();
+                }
+            }).limit(limit).skip(startIndex);
+            
         }
     });
 });

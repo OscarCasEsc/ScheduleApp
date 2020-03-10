@@ -12,8 +12,8 @@ export class ContactsService {
     private http: HttpClient
   ) { }
 
-  getContacts() {
-    return this.http.get<any>(this.URL + 'getContacts');
+  getContacts(page, pageSize) {
+    return this.http.get<any>(this.URL + `getContacts/${page}/${pageSize}`);
   }
 
   createContact(contact) {

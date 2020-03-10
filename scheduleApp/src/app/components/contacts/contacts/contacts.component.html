@@ -28,5 +28,8 @@
         </div>
       </div>
     </div>
+    <div class="mt-4 mx-auto justify-content-center" style="width: 50%">
+      <ngb-pagination #pagination [collectionSize]="totalPages" [(page)]="page" [pageSize]="pageSize" [directionLinks]="true" (click)="paginationPulsed(pagination.page)"></ngb-pagination>
+    </div>
   </div>
 </div>

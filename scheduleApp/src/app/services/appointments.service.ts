@@ -12,8 +12,8 @@ export class AppointmentsService {
     private http: HttpClient
   ) { }
 
-  getAppointments() {
-    return this.http.get<any>(this.URL + 'getAppointments');
+  getAppointments(page, pageSize) {
+    return this.http.get<any>(this.URL + `getAppointments/${page}/${pageSize}`);
   }
 
   createAppointment(appointment) {

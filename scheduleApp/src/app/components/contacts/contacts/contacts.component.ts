@@ -15,6 +15,10 @@ export class ContactsComponent implements OnInit {
 
   contacts: any;
 
+  page: number;
+  pageSize: number;
+  totalPages: number;
+
   constructor(
     private contactsService: ContactsService,
     private modalService: NgbModal,
@@ -24,13 +28,16 @@ export class ContactsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getContacts();
+    this.page = 1;
+    this.pageSize = 2;
+    this.getContacts(this.page, this.pageSize);
   }
 
-  getContacts() {
-    this.contactsService.getContacts().subscribe(
+  getContacts(page, pageSize) {
+    this.contactsService.getContacts(page, pageSize).subscribe(
       res => {
-        this.contacts = res;
+        this.contacts = res.paginatedResults;
+        this.totalPages = res.total;
       },
       err => {
         this.toastService.show(this.translateService.instant('toastMsg.errorGetContacts'),
@@ -62,7 +69,7 @@ export class ContactsComponent implements OnInit {
         console.log('Contact deleted successfully');
         this.toastService.show(this.translateService.instant('toastMsg.successDeleteContact'),
         { classname: 'bg-success text-light', delay: 2500 });
-        this.getContacts();
+        this.getContacts(this.page, this.pageSize);
       },
       err => {
         console.log('Error while deleting contact');
@@ -70,6 +77,10 @@ export class ContactsComponent implements OnInit {
         { classname: 'bg-danger text-light', delay: 2500 });
       }
     );
+  }
+
+  paginationPulsed(page) {
+    this.getContacts(page, this.pageSize);
   }
 
 }

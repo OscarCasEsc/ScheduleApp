@@ -3,3 +3,16 @@
     border-radius: 0.25rem;
     background-color: white;
 }
+
+.justify-content-center {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+::ng-deep .page-item.active .page-link {
+    background-color: #f4623a;;
+    border-color: #f4623a;;
+}
+::ng-deep .page-link {
+    color: #f4623a;
+}

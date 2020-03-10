@@ -16,6 +16,9 @@ export class AppointmentsComponent implements OnInit {
 
   appointments: any;
 
+  page: number;
+  totalPages: number;
+  pageSize: number;
   constructor(
     private appointmentsService: AppointmentsService,
     private router: Router,
@@ -25,13 +28,16 @@ export class AppointmentsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getAppointments();
+    this.page = 1;
+    this.pageSize = 2;
+    this.getAppointments(this.page, this.pageSize);
   }
 
-  getAppointments() {
-    this.appointmentsService.getAppointments().subscribe(
+  getAppointments(page, pageSize) {
+    this.appointmentsService.getAppointments(page, pageSize).subscribe(
       res => {
-        this.appointments = res;
+        this.appointments = res.paginatedResult;
+        this.totalPages = res.total;
       },  err => {
         this.toastService.show(this.translateService.instant('toastMsg.errorGetAppointments'),
         { classname: 'bg-danger text-light', delay: 2000 });
@@ -65,7 +71,7 @@ export class AppointmentsComponent implements OnInit {
         console.log('Success while deleting Appointment');
         this.toastService.show(this.translateService.instant('toastMsg.successDeleteAppointment'),
         { classname: 'bg-success text-light', delay: 2500 });
-        this.getAppointments();
+        this.getAppointments(this.page, this.totalPages);
       },
       err => {
         console.log('Error while deleting Appointment');
@@ -74,4 +80,11 @@ export class AppointmentsComponent implements OnInit {
       }
     );
   }
+
+  pulsed(page) {
+    console.log(page);
+    this.getAppointments(page, this.pageSize);
+  }
 }
+
+
