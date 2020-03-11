@@ -71,7 +71,11 @@ export class AppointmentsComponent implements OnInit {
         console.log('Success while deleting Appointment');
         this.toastService.show(this.translateService.instant('toastMsg.successDeleteAppointment'),
         { classname: 'bg-success text-light', delay: 2500 });
-        this.getAppointments(this.page, this.totalPages);
+        if (this.appointments.length === 1 && this.page > 1) {
+          this.getAppointments(this.page - 1, this.pageSize);
+        } else {
+          this.getAppointments(this.page, this.pageSize);
+        }
       },
       err => {
         console.log('Error while deleting Appointment');

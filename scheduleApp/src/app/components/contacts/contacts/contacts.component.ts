@@ -69,7 +69,12 @@ export class ContactsComponent implements OnInit {
         console.log('Contact deleted successfully');
         this.toastService.show(this.translateService.instant('toastMsg.successDeleteContact'),
         { classname: 'bg-success text-light', delay: 2500 });
-        this.getContacts(this.page, this.pageSize);
+        console.log(this.contacts.length);
+        if (this.contacts.length === 1 && this.page > 1) {
+          this.getContacts(this.page - 1, this.pageSize);
+        } else {
+          this.getContacts(this.page, this.pageSize);
+        }
       },
       err => {
         console.log('Error while deleting contact');
